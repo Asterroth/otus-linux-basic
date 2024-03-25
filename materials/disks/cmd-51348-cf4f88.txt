@@ -1,0 +1,115 @@
+ 2014  cat /proc/partitions 
+ 2015  fdisk -l /dev/sda
+ 2016  df
+ 2017  cat /proc/partitions 
+ 2018  fdisk -l /dev/sda
+ 2019  dd if=/dev/sda bs=1 count=512 | hexdump -C
+ 2020  dd if=/dev/sda skip=446 bs=1 count=16 | hexdump -C
+ 2021  ls -l /dev/sda
+ 2022  ls -l /dev/sda?
+ 2023  mkfs.ext4 /dev/sda1
+ 2024  mount /dev/sda1 /mnt/01/
+ 2025  df -h
+ 2026  df -hT
+ 2027  ls -l /mnt/01/
+ 2028  cp -r /var/log/* /mnt/01/
+ 2029  mkfs.ext4 /dev/sda2
+ 2030  mount /dev/sda2 /mnt/02/
+ 2031  cp -r /var/log/* /mnt/02/
+ 2032  df -h
+ 2033  ls -l /mnt/01/
+ 2034  ls -l /mnt/02/
+ 2035  df -h
+ 2036  fdisk -l /dev/sda
+ 2037  fdisk /dev/sda
+ 2038  df -hT
+ 2039  fdisk -l /dev/sda
+ 2040  cat /proc/partitions 
+ 2041  partprobe 
+ 2042  cat /proc/partitions 
+ 2043  df -hT
+ 2044  resize2fs /dev/sda2
+ 2045  df -hT
+ 2046  ls -l /mnt/02/
+ 2047  ls -l /mnt/01/
+ 2048  df -hT
+ 2049  umount /mnt/01
+ 2050  umount /mnt/02
+ 2051  df -hT
+ 2052  mount /dev/sda1 /mnt/01/
+ 2053  mount /dev/sda2 /mnt/02
+ 2054  df -hT
+ 2055  ls -l /mnt/01/
+ 2056  ls -l /mnt/02/
+ 2057  df -h
+ 2058  tune2fs -l /dev/sda1
+ 2059  fdisk -l /dev/sda
+ 2060  df -hT
+ 2061  resize2fs --help
+ 2062  resize2fs /dev/sda2 min
+ 2063  man resize2fs
+ 2064  resize2fs /dev/sda2 -P
+ 2065  resize2fs /dev/sda2 21448
+ 2066  umount /mnt/02 
+ 2067  resize2fs /dev/sda2 21448
+ 2068  e2fsck -f /dev/sda2
+ 2069  resize2fs /dev/sda2 21448
+ 2070  mount /dev/sda2 /mnt/02/
+ 2071  df -hT
+ 2072  fdisk -l /dev/sda
+ 2073  p
+ 2074  fdisk /dev/sda
+ 2075  partprobe 
+ 2076  df -hT
+ 2077  resize2fs /dev/sda2
+ 2078  df -h
+ 2079  umount /mnt/02
+ 2080  umount /mnt/01
+ 2081  df -hT
+ 2082  fdisk /dev/sda
+ 2083  fdisk /dev/sda -l
+ 2084  mount /dev/sda1 /mnt/01
+ 2085  mount /dev/sda2 /mnt/02
+ 2086  df -hT
+ 2087  fdisk /dev/sda
+ 2088  ls -l /dev/sda1
+ 2089  mount /dev/sda1 /mnt/01/
+ 2090  fdisk -l /dev/sda
+ 2091  fdisk /dev/sda
+ 2092  mount /dev/sda1 /mnt/01/
+ 2093  ls -l /mnt/01/
+ 2094  df 
+ 2095  fdisk /dev/sda
+ 2096  partprobe ]
+ 2097  partprobe 
+ 2098  mount /dev/sda2 /mnt/02/
+ 2099  df -g
+ 2100  fg -hT
+ 2101  df -hT
+ 2102  ls -l /mnt/01/
+ 2103  ls -l /mnt/02/
+ 2104  df -h
+ 2105  fdisk /dev/sda
+ 2106  cat /proc/partitions 
+ 2107  partprobe
+ 2108  cat /proc/partitions 
+ 2109  df -hT
+ 2110* 
+ 2111  df -hT
+ 2112  resize2fs /dev/sda2 100M
+ 2113  history
+root@ubuntu16:~# lsblk 
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda             8:0    0   10G  0 disk 
+├─sda1          8:1    0    1G  0 part /mnt/01
+└─sda2          8:2    0    2G  0 part /mnt/02
+sdb             8:16   0    1G  0 disk 
+sdc             8:32   0    1G  0 disk 
+sr0            11:0    1 1024M  0 rom  
+vda           253:0    0   16G  0 disk 
+└─vda1        253:1    0   16G  0 part 
+  ├─vg00-root 252:0    0  9.6G  0 lvm  /
+  ├─vg00-boot 252:1    0  488M  0 lvm  /boot
+  ├─vg00-home 252:2    0    2G  0 lvm  /home
+  └─vg00-tmp  252:3    0  488M  0 lvm  /tmp
+root@ubuntu16:~# 
