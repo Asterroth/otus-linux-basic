@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Ваш GitHub токен (можно найти в настройках аккаунта)
-GITHUB_TOKEN=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
+GITHUB_TOKEN=token
 
 ## URL репозитория, из которого вы хотите получить файл конфигурации
 REPOSITORY_URL=https://github.com/your_username/your_repository
