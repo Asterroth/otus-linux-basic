@@ -1,0 +1,95 @@
+# Сетевой фильтр
+
+# Рассмотрим подробнее команды iptables. Говоря в общем, iptables — утилита, 
+# задающая правила для сетевого фильтра Netfilter и работающая в пространстве 
+# ядра Linux.
+
+man iptables
+
+# -L — посмотреть список правил (можно указать цепочку, иначе выводятся все);
+sudo iptables -nvL --line-numbers
+
+# -P — установить политику по умолчанию для заданной цепочки;
+sudo iptables -P INPUT DROP
+# или
+sudo iptables -P INPUT ACCEPT
+
+# Политика по умолчанию задает порядок работы с пакетами, для которых нет ни 
+# одного правила. Если в цепочке правил ни одно не подошло, в итоге применяется 
+# действие по умолчанию, которое и задается политикой. Если правило подошло, 
+# действие по умолчанию не выполняется.
+
+# Цепочка — это набор правил, которые проверяются по пакетам поочередно 
+# (напоминает язык программирования). В таблице filter видим цепочки INPUT, 
+# FORWARD и OUTPUT. Но есть и другие таблицы (их нужно указывать явно): таблица 
+# nat, когда нам необходима трансляция адресов и портов, и mangle — когда 
+# требуется внести изменения в пакет (например, установить ttl в 64 и скрыть от 
+# провайдера использование подключения как шлюза к собственной сети).
+
+#Просмотреть цепочки для другой таблицы
+iptables -t nat -L
+iptables -t nat -nvL --line-numbers      
+      
+      
+# Обратите внимание: имеет значение порядок правил в цепочке. Сравните:
+iptables -A INPUT -p tcp -j DROP
+iptables -A INPUT -p tcp --dport=22 -j ACCEPT
+
+# Простой пример конфигурации:
+
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+iptables -A INPUT -i lo -j ACCEPT 
+iptables -A OUTPUT -o lo -j ACCEPT
+
+iptables -A INPUT -p icmp -j ACCEPT
+iptables -A OUTPUT -p icmp -j ACCEPT
+
+# Локальные соединения с динамических портов
+iptables -A OUTPUT -p TCP --sport 32768:61000 -j ACCEPT
+iptables -A OUTPUT -p UDP --sport 32768:61000 -j ACCEPT
+
+# Разрешить только те пакеты, которые мы запросили
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+iptables -A INPUT -i enp0s3 -m state --state INVALID -j DROP
+
+iptables -A INPUT -p TCP -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p UDP -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Но если работаем как сервер, следует разрешить и нужные порты
+iptables -A INPUT -i enp0s3 -p TCP --dport 22 -j ACCEPT 
+iptables -A OUTPUT -o enp0s3 -p TCP --sport 22 -j ACCEPT
+
+# Редирект порта
+iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+# Сохранение и восстановление значений
+iptables-save > ./iptables.rules
+iptables-restore < ./iptables.rules
+
+iptables -A INPUT -s 209.175.153.23 -j DROP
+iptables -A INPUT -s 209.175.153.23 -p tcp --destination-port 22 -j DROP
+
+# Работа с NAT
+iptables -t nat -A PREROUTING -p tcp --dport 9022 -j DNAT --to 192.168.56.6:22
+
+iptables -A INPUT -p tcp --dport 9022 -j ACCEPT
+iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
+
+# NAT Host
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+# Edit systctl.conf for permanent changes
+# MASQUERADE = auto SNAT
+iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
+
+iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
+
+
+# Сохранение правил
+apt install iptables-persistent netfilter-persistent
+netfilter-persistent save
+netfilter-persistent start

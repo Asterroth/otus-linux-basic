@@ -1,0 +1,60 @@
+�ò�0�f��	JJtM(��'�-E<@@E���d|����P� l	���+E�
+,L$�0�f�"
+J'�-�tM(��E(<@9~�����d|P�Rj� l
+��J���
+�Q,L$0�f�"
+BBtM(��'�-E4�	@@E���d|����P� l
+Rj��+=
+,L$��Q0�fM%
+��tM(��'�-Ey�
+@@E^��d|����P� l
+Rj��+�
+,L$��QGET / HTTP/1.1
+Host: ya.ru
+User-Agent: curl/7.81.0
+Accept: */*
+
+0�f<P
+B'�-�tM(��E(4#93x�����d|P�Rj� lO����
+�^,L$�0�f�}
+          '�-�tM(��EV#9+U�����d|P�Rj� lO��3_
+�_,L$�HTTP/1.1 302 Moved temporarily
+Accept-CH: Sec-CH-UA-Platform-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA, Sec-CH-UA-Full-Version-List, Sec-CH-UA-WoW64, Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Platform, Sec-CH-UA-Full-Version, Viewport-Width, DPR, Device-Memory, RTT, Downlink, ECT
+Location: http://ya.ru/showcaptcha?cc=1&mt=60D7DB17876454310E95FFCBE649700771A0DA2BF6D1B81EA055D04A67C62649EA58D5FF6AD1D1BE6AE3770976C502993C1C1D48A83B7EA40C8DF3CFE9AFABF7EA8B171B3C217E5B5B7350E79C536910FA1557CAC41E9178E5EF3C738532C781E4C7C438045253C0FF35A7443C31D49BD8588C5EA8DFDAE62151C5178F516ADB75962626FE7E9924E0EBEF83CBE912E3CA4EEFEBF72CD8375E23E4BBCE5F6B2FF852595B406BA5DBB0496C29BA96B83C0EB333C113799E8E931C78C61A6E224EC076488B02E839C40E1656747C4925640C0B6CC6FC8658AC03090F0D&retpath=aHR0cDovL3lhLnJ1Lz8%2C_1dd0ea41ce1bc9c1e219a1ef39f8f359&t=2/1713277232/736a15beab7a81cb5cc67c8fa65e4bd6&u=acf82ac9-acb593d8-104a92f7-824fff1f&s=8a654553d61d77160b9c8556aedcd924
+NEL: {"report_to": "network-errors", "max_age": 100, "success_fraction": 0.001, "failure_fraction": 0.1}
+Report-To: { "group": "network-errors", "max_age": 100, "endpoints": [{"url": "https://dr.yandex.net/nel", "priority": 1}, {"url": "https://dr2.yandex.net/nel", "priority": 2}]}
+Set-Cookie: spravka=dD0xNjgxNzQxMjMyO2k9OTUuMzEuMzAuMjI3O0Q9NDY1RjBCNzhGQzZBOUNFRkEyQTg1MkIzRkVDRTQxMDNCMzFCQUY0OEJENzA2M0FGOEUxNjRCMDBBOUUzQTQ3ODdEMEFERUMyQTlCRUU4Q0Y7dT0xNjgxNzQxMjMyNjc2MTg4NDE3O2g9ODVkNWU5NTIxYWYyZTBjMTI1MjBlYjkyMGMxNGU0NTc=; domain=.ya.ru; path=/; expires=Thu, 16 May 2024 14:20:32 GMT
+Set-Cookie: _yasc=/vu+Ii6i3P5ThxWfdTlXFZpbUXfjznfVW6HqrlRQG+5TS1AYLzOmLFMIhixaoavklCM=; domain=.ya.ru; path=/; expires=Fri, 14 Apr 2034 14:20:32 GMT; secure
+Set-Cookie: receive-cookie-deprecation=1; Path=/; Domain=.ya.ru; Expires=Wed, 16 Apr 2025 14:20:32 GMT; SameSite=None; Secure; HttpOnly; Partitioned
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+X-Yandex-Captcha: captcha
+X-Yandex-EU-Request: 0
+X-Yandex-Req-Id: 1713277232675800-7848720204563338044-balancer-l7leveler-kubr-yp-vla-108-BAL
+
+0
+
+0�f�}
+     �'�-�tM(��E(�#90
+                     �����d|P�Rn�� lO���9
+�{,L$�tps://dr2.yandex.net/nel", "priority": 2}]}
+Set-Cookie: spravka=dD0xNjgxNzQxMjMyO2k9OTUuMzEuMzAuMjI3O0Q9NDY1RjBCNzhGQzZBOUNFRkEyQTg1MkIzRkVDRTQxMDNCMzFCQUY0OEJENzA2M0FGOEUxNjRCMDBBOUUzQTQ3ODdEMEFERUMyQTlCRUU4Q0Y7dT0xNjgxNzQxMjMyNjc2MTg4NDE3O2g9ODVkNWU5NTIxYWYyZTBjMTI1MjBlYjkyMGMxNGU0NTc=; domain=.ya.ru; path=/; expires=Thu, 16 May 2024 14:20:32 GMT
+Set-Cookie: _yasc=/vu+Ii6i3P5ThxWfdTlXFZpbUXfjznfVW6HqrlRQG+5TS1AYLzOmLFMIhixaoavklCM=; domain=.ya.ru; path=/; expires=Fri, 14 Apr 2034 14:20:32 GMT; secure
+Set-Cookie: receive-cookie-deprecation=1; Path=/; Domain=.ya.ru; Expires=Wed, 16 Apr 2025 14:20:32 GMT; SameSite=None; Secure; HttpOnly; Partitioned
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+X-Yandex-Captcha: captcha
+X-Yandex-EU-Request: 0
+X-Yandex-Req-Id: 1713277232675800-7848720204563338044-balancer-l7leveler-kubr-yp-vla-108-BAL
+
+0
+
+0�f~
+    BBtM(��'�-E4�
+                 @@E���d|����P� lORr2��+=
+,L%�_0�f|~
+          NNtM(��'�-E@�
+                       @@E���d|����P� lORr2��+I
+,L%�{
+Rn�Rr20�f�
+@@E���d|����P� lORr2��+=

@@ -1,0 +1,29 @@
+### Разрешаем loopback
+```bash
+iptables -A INPUT -i lo -j ACCEPT
+```
+
+### Разрешаем ICMP
+```bash
+iptables -A INPUT -p icmp -j ACCEPT
+```
+
+### Разрешаем ESTABLISHED, RELATED
+```bash
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+```
+
+### Запрещаем (дропаем) INVALID
+```drop
+iptables -A INPUT -m state --state INVALID -j DROP
+```
+
+### Разрешаем 22, 80, 443 порты
+```bash
+iptables -A INPUT -p TCP -m multiport --dports 22,80,443 -j ACCEPT
+```
+
+### Всключаем политику DROP
+```bash
+iptables -P INPUT DROP
+```
